@@ -1,0 +1,120 @@
+/* Fondo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #370170, #95b9f8);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor centrado */
+.container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+/* Tarjeta del formulario */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas e inputs */
+label {
+    display: block;
+    margin-top: 12px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    border-color: #6a11cb;
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.validate {
+    background: #2575fc;
+}
+
+.save {
+    background: #28a745;
+}
+
+.reset {
+    background: #dc3545;
+}
+
+/* Mensajes */
+.error-title {
+    color: #dc3545;
+    text-align: center;
+}
+
+.success-title {
+    color: #28a745;
+    text-align: center;
+}
+
+.error {
+    color: #dc3545;
+    margin: 6px 0;
+}
+
+.success {
+    color: #28a745;
+    margin: 10px 0;
+}
+
+/* Enlace volver */
+.back {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
