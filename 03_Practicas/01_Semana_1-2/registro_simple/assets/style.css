@@ -1,7 +1,7 @@
 /* Fondo general */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #370170, #95b9f8);
+    background: linear-gradient(135deg, #b005c7, #c824f1);
     margin: 0;
     height: 100vh;
     display: flex;
@@ -10,14 +10,14 @@ body {
 }
 
 /* Contenedor centrado */
-.container {
+.contenedor {
     width: 100%;
     max-width: 420px;
     padding: 20px;
 }
 
 /* Tarjeta del formulario */
-.card {
+.carta {
     background: #fff;
     border-radius: 16px;
     padding: 25px;
@@ -53,7 +53,7 @@ input:focus {
 }
 
 /* Botones */
-.buttons {
+.botones {
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -75,25 +75,25 @@ input:focus {
     transform: translateY(-2px);
 }
 
-.validate {
+.validacion {
     background: #2575fc;
 }
 
-.save {
+.guardado {
     background: #28a745;
 }
 
-.reset {
+.reiniciar {
     background: #dc3545;
 }
 
 /* Mensajes */
-.error-title {
+.error-titulo {
     color: #dc3545;
     text-align: center;
 }
 
-.success-title {
+.exito-title {
     color: #28a745;
     text-align: center;
 }
@@ -103,13 +103,13 @@ input:focus {
     margin: 6px 0;
 }
 
-.success {
+.exito {
     color: #28a745;
     margin: 10px 0;
 }
 
 /* Enlace volver */
-.back {
+.salir {
     display: block;
     margin-top: 15px;
     text-align: center;
