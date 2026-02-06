@@ -1,0 +1,25 @@
+<?php
+if ($_POST){
+    echo "Los datos se resivieron correctamente<br>";
+    echo "<pre>";
+    print_r($_POST);
+    echo "<pre>";
+} else{
+    echo "no se han resivido datos aún";
+}
+
+if (empty($nombre)){
+    echo "El nombre es obligatorio";
+} 
+elseif (strlen($nombre) < 3){
+    echo "Debe tener minimo 3 caracteres";
+}
+
+if (empty($edad)){
+    echo "La edad es obligatoria";
+}elseif (!is_numeric($edad) || $edad <15){
+    echo "La edad debe ser mayor a 15";
+}
+
+
+?>

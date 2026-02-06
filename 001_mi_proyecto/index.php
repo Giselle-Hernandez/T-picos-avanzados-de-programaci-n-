@@ -17,20 +17,23 @@ Solo construimos la interfaz
 <form>  <!--esta etiqueta es para crear el formulario. Action es adonde quieres que te mande al presionar un boton -->
     <!-- Campo de texto -->
     <label>Escribe algo:</label> <!--es la etiqueta para mostrar algo o de un campo de texto -->
-    <input type="text"><!-- Tipo de dato que va a resivir el campo de texto-->
+    <input type="text"><!-- Tipo de dato que va a resivir el campo de texto, entrada de datos-->
 
-    <br><br> 
+    <br><br> <!--break brinca los renglones, salto de linea-->
 
     <!-- Campo numérico -->
-    <label>Número:</label>
+    <label>Número:</label> <!---->
     <input type="number">
 
     <br><br>
 
     <!-- Botones -->
-    <button>Botón A</button>
+    <button>Botón A</button> <!--botones de tipo submit -->
     <button>Botón B</button>
 </form>
 
 </body>
 </html>
+<!--html es un lenguaje de etiquetas-->
+<!--los botones son los eventos-->
+<!-- hay que validar si se resivio y si es asi mostrar los datos -->
