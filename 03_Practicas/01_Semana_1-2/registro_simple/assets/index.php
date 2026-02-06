@@ -27,8 +27,8 @@
     <input type="password" id="confirm_contraseña" name="confirm_contraseña">
     <br></br>
 
-    <button type="submit" name="action" value="validar">Validar</button>
-    <button type="submit" name="action" value="guardar">Guardar</button>
+    <button type="submit" id="action" name="action" value="validar">Validar</button>
+    <button type="submit" id="action" name="action" value="guardar">Guardar</button>
     <button type="reset">Limpiar</button>
 </form>
 
