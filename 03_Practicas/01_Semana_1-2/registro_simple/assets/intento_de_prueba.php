@@ -20,11 +20,11 @@
     <br></br>
 
     <label>Contraseña:</label>
-    <input type="password" id="contrasena" name="contrasena">
+    <input type="password" id="contraseña" name="contraseña">
     <br></br>
 
     <label>Confirmar contraseña:</label>
-    <input type="password" id="confirm_contrasena" name="confirm_contrasena">
+    <input type="password" id="confirm_contraseña" name="confirm_contraseña">
     <br></br>
 
     <button type="submit" name="action" value="validar">Validar</button>

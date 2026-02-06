@@ -4,8 +4,8 @@ $errores = [];  //arreglo donde se guardan los mensajes de error
 $nombre = trim($_POST["nombre"]); //trim() elimina espacios al inicio y al final para solo comparar los caracteres.
 $correo = trim($_POST["correo"]); //Guarda el valor enviado desde el formulario en la variable $correo.
 $edad = trim($_POST["edad"]);
-$contrasena = trim($_POST["contrasena"]);
-$confirm_contrasena = trim($_POST["confirm_contrasena"]);
+$contraseña = trim($_POST["contraseña"]);
+$confirm_contraseña = trim($_POST["confirm_contraseña"]);
 $action = $_POST["action"];
 
 // En esta seccion se valida que el nombre sea correcto
@@ -25,19 +25,19 @@ if (empty($correo)) {
 // En esta seccion se valida que la edad sea correcta
 if (empty($edad)) {
     $errores[] = "La edad es obligatoria.";
-} elseif (!is_numeric($edad) || $edad < 15 || $edad > 99) { //Revisa que sea número y esté en el rango 15–99. || significan o
-    $errores[] = "La edad debe ser un número entre 15 y 99.";
+} elseif (!is_numeric($edad) || $edad < 15) { //Revisa que sea número y esté en el rango 15–99. || significan o
+    $errores[] = "La edad debe ser un número mayor a 15";
 }
 
 // En esta seccion se valida que la contraseña sea correcta
-if (empty($contrasena)) {
+if (empty($contraseña)) {
     $errores[] = "La contraseña es obligatoria.";
-} elseif (strlen($contrasena) < 6) { //Revisa que tenga mínimo 6 caracteres.
+} elseif (strlen($contraseña) < 6) { //Revisa que tenga mínimo 6 caracteres. strlen numero de caracteres en una cadena de texto. 
     $errores[] = "La contraseña debe tener al menos 6 caracteres.";
 }
 
 //confirmacion de la contraseña
-if ($contrasena !== $confirm_contrasena) { //Verifica que ambas coincidan.
+if ($contraseña !== $confirm_contraseña) { //Verifica que ambas coincidan.
     $errores[] = "Las contraseñas no coinciden.";
 }
 ?>
@@ -57,9 +57,9 @@ if ($contrasena !== $confirm_contrasena) { //Verifica que ambas coincidan.
 
     <?php else : ?> <!--si no hay errores-->
         <h3> ¡Acción exitosa!</h3>
-        Nombre: <?php echo htmlspecialchars($nombre); ?> <br> <!-- muestra los datos ingresados-->                   
-        Correo: <?php echo htmlspecialchars($correo); ?> <br><!--impide que el navegador interprete los datos como código--> 
-        Edad: <?php echo htmlspecialchars($edad); ?> <br>
+        Nombre: <?php echo $nombre; ?> <br> <!-- muestra los datos ingresados-->                   
+        Correo: <?php echo $correo; ?> <br><!--impide que el navegador interprete los datos como código--> 
+        Edad: <?php echo $edad; ?> <br>
 
     <?php if ($action == "guardar") : ?>
         Los datos se guardaron correctamente. <!-- mensaje que se muestra al guardar-->
