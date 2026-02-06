@@ -9,26 +9,28 @@
 <form action="procesar.php" method="POST"> 
     <label>Nombre:</label>
     <input type="text" id="nombre" name="nombre">
-    
     <br></br>
     
     <label>Edad:</label>
     <input type="number" id="edad" name="edad">
     <br></br>
 
-    <label>Corro electronico:</label>
+    <label>Correo electronico:</label>
     <input type="email" id="correo" name="correo">
     <br></br>
 
     <label>Contraseña:</label>
-    <input type="password" id="contraseña" name="cotraseña">
+    <input type="password" id="contrasena" name="contrasena">
     <br></br>
 
-    <button type="submit" name="validar">Validar</button>
-    <button type="submit" name="guardar">Guardar</button>
-    <button type="submit" name="limpiar">Limpiar</button>
+    <label>Confirmar contraseña:</label>
+    <input type="password" id="confirm_contrasena" name="confirm_contrasena">
+    <br></br>
+
+    <button type="submit" name="action" value="validar">Validar</button>
+    <button type="submit" name="action" value="guardar">Guardar</button>
+    <button type="reset">Limpiar</button>
 </form>
 
 </body>
 </html>
-<!--mensajes con php -->
