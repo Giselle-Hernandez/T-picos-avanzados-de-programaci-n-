@@ -50,23 +50,22 @@ if ($contrasena !== $confirm_contrasena) { //Verifica que ambas coincidan.
 </head>
 <body>
     <?php if (!empty($errores)) : ?> <!--Verifica que errores[] no este vacio. Si hay errores se muestran todos, si no, muestra el mensaje de éxito.-->
-        <h3 class="error-titulo">Error:</h3> <!--muestra el titulo de error-->
+        <h3>Error:</h3> <!--muestra el titulo de error-->
         <?php foreach ($errores as $error) : ?> <!-- recorre carda error y lo muestra en pantalla-->
-            <p class="error"><?php echo $error; ?></p>
+            <?php echo $error; ?><br>
         <?php endforeach; ?>
 
     <?php else : ?> <!--si no hay errores-->
-        <h3> ¡El registro se realizo con éxito!</h3>
+        <h3> ¡Acción exitosa!</h3>
         Nombre: <?php echo htmlspecialchars($nombre); ?> <br> <!-- muestra los datos ingresados-->                   
         Correo: <?php echo htmlspecialchars($correo); ?> <br><!--impide que el navegador interprete los datos como código--> 
-        Edad: <?php echo htmlspecialchars($edad); ?>
+        Edad: <?php echo htmlspecialchars($edad); ?> <br>
 
-        <?php if ($action == "guardar") : ?>
-            Los datos se guardaron correctamente. <!-- mensaje que se muestra al guardar-->
-        <?php endif; ?>
+    <?php if ($action == "guardar") : ?>
+        Los datos se guardaron correctamente. <!-- mensaje que se muestra al guardar-->
+    <?php endif; ?>
 
     <?php endif; ?> <!--termino de un bloque-->
-
 
 </body>
 </html>
