@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Formulario</h2>
-<form action="procesar.php" method="POST"> 
+<form action="procesar.php" method="POST">  <!-- Define a donde se enviaran los datos -->
     <label>Nombre:</label>
     <input type="text" id="nombre" name="nombre">
     <br></br>
