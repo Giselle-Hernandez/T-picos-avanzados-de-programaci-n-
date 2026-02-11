@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Formulario de registro</h1>
-    <form method="POST" action="Procesar.phpon" onsubmit="return validar_form()">
+    <form method="POST" action="Procesar.php" onsubmit=" return validar_form()">
     <!--Radio botones-->    
     <p><strong>Selecciona tu semestre:</strong></p>
     <input type="radio" name="semestre" value="primero">Primero <br>
@@ -23,7 +23,7 @@
 
     <!--Select-->
     <p><strong>Selecciona el curso al que quieres pertenecer:</strong></p>
-    <select name="curso" id="curso">
+    <select name="curso" id="curso"> <br>
         <option value="">--Selecciona una opción--</option>
         <option value="maquillaje">Maquillaje</option>
         <option value="futbol">Futbol</option>
@@ -32,10 +32,9 @@
         <option value="robotica">Robotica</option>
     </select>
     <!--Botón para enviar-->
-    
+    <button type="submit" name="action" value="enviar">Enviar</button>
 
     </form>
-
 
 </body>
 </html>
