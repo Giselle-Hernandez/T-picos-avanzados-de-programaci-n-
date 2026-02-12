@@ -11,26 +11,28 @@
     <form method="POST" action="Procesar.php" onsubmit=" return validar_form()">
     <!--Radio botones-->    
     <p><strong>Selecciona tu semestre:</strong></p>
-    <input type="radio" name="semestre" value="primero">Primero <br>
-    <input type="radio" name="semestre" value="segundo">Segundo <br>
-    <input type="radio" name="semestre" value="tercero">Tercero <br>
+    <input type="radio" name="semestre" value="Segundo">Segundo <br>
+    <input type="radio" name="semestre" value="Cuarto">Cuarto <br>
+    <input type="radio" name="semestre" value="Sexto">Sexto <br>
+    <input type="radio" name="semestre" value="Octavo">Octavo <br>
     
-    <!--Checkbox-->
-    <p><strong>Selecciona tus intereses:</strong></p>
-    <input type="checkbox" name="interes" value="belleza">Belleza<br>
-    <input type="checkbox" name="interes" value="deportes">Deportes<br>
-    <input type="checkbox" name="interes" value="tecnologia">Tecnologia<br>
-
     <!--Select-->
-    <p><strong>Selecciona el curso al que quieres pertenecer:</strong></p>
-    <select name="curso" id="curso"> <br>
+    <p><strong>Selecciona tu carrera:</strong></p>
+    <select name="carrera" id="carrera"> <br>
         <option value="">--Selecciona una opción--</option>
-        <option value="maquillaje">Maquillaje</option>
-        <option value="futbol">Futbol</option>
-        <option value="basketbol">Baskertbol</option>
-        <option value="programacion">Programación</option>
-        <option value="robotica">Robotica</option>
+        <option value="Sistemas computacionales">Sistemas computacionales</option>
+        <option value="Gestion empresarial">Gestion empresarial</option>
+        <option value="Innovacion agricola sustentable">Innovacion agricola sustentable</option>
+        <option value="Industrial">Industrial</option>
     </select>
+
+    <!--Checkbox--> 
+    <p><strong>Selecciona que areas del Tec visitas con frecuencia: </strong></p>
+    <input type="checkbox" name="area[]" value="Cafeteria">Cafeteria<br>
+    <input type="checkbox" name="area[]" value="Laboratorio de quimica">Laboratorio de quimica<br>
+    <input type="checkbox" name="area[]" value="Biblioteca">Biblioteca <br>
+    <input type="checkbox" name="area[]" value="Taller de robotica">Taller de robotica <br><br> 
+
     <!--Botón para enviar-->
     <button type="submit" name="action" value="enviar">Enviar</button>
 
