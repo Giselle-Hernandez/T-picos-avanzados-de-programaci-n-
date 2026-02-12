@@ -1,0 +1,74 @@
+Css
+/* Reset básico */
+{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif; /*define la fuente del texto*/
+}
+
+/* Fondo de la página */
+body {
+    background-color: #f4f6f9; /*color de fondo*/
+    margin: 0;
+    padding: 0;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+/* Contenedor del formulario */
+form {
+    background-color: #ffffff; /*color de fondo*/
+    width: 400px; /*ancho del contenedor*/
+    margin: 30px auto; /*margenes arriba y abajo*/
+    padding: 25px; /*separa el contenido de las orillas*/
+    border-radius: 10px; /*redondea las esquinas*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /*tarjeta flotando*/
+}
+
+/* Subtítulos */
+form p {
+    margin-top: 15px; /*agrega espacio arriba del elemento*/
+    margin-bottom: 8px; /*espacio abajo del elemento*/
+    font-weight: bold; /*texto en negritas weight es para la intensidad del color*/
+    color: #444; 
+}
+
+/* Inputs y select */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 6px; /*margen derecho*/
+}
+
+select {
+    width: 100%; /*el elemento ocupara el 100 de ancho disp*/
+    padding: 8px; /*espacio interno dentro del elemento*/
+    border-radius: 5px; /*redondea las esquinas*/
+    border: 1px solid #ccc; /*estilo del borde*/
+    margin-top: 5px;
+}
+
+/* Botón */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /*cambia el color de fondo del elemento*/
+    color: white;
+    font-size: 16px;
+}
+
+.contenedor { /*el . indica que es una clase */
+    background-color: white; /*es el color de fondo*/
+    width: 400px; /*ancho del contenedor*/
+    margin: 40px auto; /*argen arriba y abajo. auto centra horizontalmente el contenido*/
+    padding: 25px;/*separa el contenido de los bordes*/
+    border-radius: 10px; /*redondea las esquinas*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /*esta linea nos sirve para crear el efecto de una tarjeta flotante*/
+}
+
