@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!--Tipo de documento -->
+<html lang="es"> <!--idioma español -->
 <head>
-    <meta charset="UTF-8">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/validar.js"></script>
+    <meta charset="UTF-8"> <!--caracteres especiales -->
+    <title>Formulario</title> <!--titulo de la ventana -->
+    <link rel="stylesheet" href="css/estilos.css"> <!--enlace con el css. href es hypertext reference -->
+    <script src="js/validar.js"></script> <!-- enlace con el archivo js-->
 </head>
 <body>
-    <h1>Formulario de registro</h1>
-    <form method="POST" action="Procesar.php" onsubmit=" return validar_form()">
+    <h1>Formulario de registro</h1> <!--titulo de la pagina-->
+    <form method="POST" action="Procesar.php" onsubmit=" return validar_form()"> <!--onsubmit es un evento-->
     <!--Radio botones-->    
     <p><strong>Selecciona tu semestre:</strong></p>
     <input type="radio" name="semestre" value="Segundo">Segundo <br>

@@ -1,10 +1,10 @@
 //Funcion para validar
 function validar_form(){
     let semestre = document.querySelector( //let = define variables que estan dentro de un bloque de codigo
-        'input[name="semestre"]:checked'
+        'input[name="semestre"]:checked' //selecciona los input que tengan name="semestre" y selecciona el que este marcado
     )
 
-    if (!semestre){
+    if (!semestre){ //si no existe semestre
         alert("Debe seleccionar un semestre");
         return false; //este es para cancelar el envio
     }
@@ -20,7 +20,7 @@ function validar_form(){
     }
 
     //Revision del select
-    let carrera = document.getElementById("carrera").value;
+    let carrera = document.getElementById("carrera").value; //Crea una variable llamada carrera y guarda lo que hay en el campo con id carrera
     if (carrera==""){
         alert("Debe seleccionar su carrera");
         return false;
@@ -29,6 +29,4 @@ function validar_form(){
         return true;
     } //Si todo esta bien 
     
-   
-
 }
