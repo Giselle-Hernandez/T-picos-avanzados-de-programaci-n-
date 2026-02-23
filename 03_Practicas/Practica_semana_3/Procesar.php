@@ -10,7 +10,7 @@
     <H2>Estos son los datos recibidos por el formulario</H2>
 
 <?php //apertura de php
-if ($_SERVER["REQUEST_METHOD"]=="POST"){ //si se accedio a la pagina mediante  post entonces ejecuta
+if ($_SERVER["REQUEST_METHOD"]=="POST"){ //si se accedio a la pagina mediante post entonces ejecuta "REQUEST_METHOD"= metodo utilizado por el navegador para acceder a una pagina
     
     //mostrar el semestre 
     if (isset($_POST["semestre"])){ //Si existe un valor enviado en el formulario en el campo semestre ejecuta
@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){ //si se accedio a la pagina mediante  p
         echo "<p><strong>No se recibio ningun semestre</strong><p>";
     }
 
-    //mostrar la carrera
-    if (!empty($_POST["carrera"])){ //si $_POST carrera no esta vacio
+    //mostrar la carrera. Es el select 
+    if (!empty($_POST["carrera"])){ //si $_POST carrera no esta vacio !empty significa si no esta vacio
         $carrera = $_POST["carrera"];
         echo "<p><strong>Carrera: </strong>$carrera</p>";
     }else{
@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){ //si se accedio a la pagina mediante  p
     }else{
         echo "<p>No se selecciono ningun área:( </p>";
     }
-
 }
 ?>
     </div> <!--cierra la clase con los estilos-->

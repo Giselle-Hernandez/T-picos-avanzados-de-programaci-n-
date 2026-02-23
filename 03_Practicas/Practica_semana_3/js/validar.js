@@ -1,5 +1,6 @@
 //Funcion para validar
 function validar_form(){
+    //validar los botones de radio
     let semestre = document.querySelector( //let = define variables que estan dentro de un bloque de codigo
         'input[name="semestre"]:checked' //selecciona los input que tengan name="semestre" y selecciona el que este marcado
     )
