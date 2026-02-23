@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
         } else if(isNaN(edad) || edad < 18 || edad > 100){
             errorMsg = "Edad inválida (18-100).";
         } else if(!validarFecha(fecha_ing)){
-            errorMsg = "Fecha de ingreso inválida o futura.";
+            errorMsg = "Fecha de ingreso inválida";
         }
 
         if(errorMsg){

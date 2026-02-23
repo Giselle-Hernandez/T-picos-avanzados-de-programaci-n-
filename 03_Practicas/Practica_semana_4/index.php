@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Registro de empleados</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script defer src="js/validar.js"></script>
 </head>
 <body>
 <div class="contenedor">
