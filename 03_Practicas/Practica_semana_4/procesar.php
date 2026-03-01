@@ -1,19 +1,19 @@
 <?php
-require_once("funciones.php");
+require_once("funciones.php"); //incluir y evaluar un archivo externo dentro de tu script actual
 
 if($_SERVER["REQUEST_METHOD"] !== "POST"){
     die("Acceso no permitido");
 }
 
 // Recibir y sanitizar datos
-$nombre = limpiarTxt($_POST["nombre"] ?? '');
+$nombre = limpiarTxt($_POST["nombre"] ?? ''); // ??"" operador de funcion nula
 $correo = trim($_POST["correo"] ?? '');
 $edad = $_POST["edad"] ?? '';
 $fecha_ing = $_POST["fecha_ing"] ?? '';
 $puesto = limpiarTxt($_POST["puesto"] ?? '');
 
 // Validaciones
-if($nombre === '' || strlen($nombre) < 3) die("Error: Nombre inválido");
+if($nombre === '' || strlen($nombre) < 3) die("Error: Nombre inválido");  //esta matando el proceso
 if(!validarCorreo($correo)) die("Error: Correo inválido");
 if(!validarEdad($edad)) die("Error: Edad inválida");
 if(!validarFechaIngreso($fecha_ing)) die("Error: Fecha de ingreso inválida");
@@ -28,7 +28,7 @@ $nuevoEmpleado = [
     "puesto" => $puesto
 ];
 
-// Archivo JSON
+//  crea un archivo JSON para guardar los registros de los empleados
 $archivo = "empleados.json";
 
 if(file_exists($archivo)){
@@ -42,7 +42,7 @@ if(file_exists($archivo)){
 $empleados[] = $nuevoEmpleado;
 
 // Guardar JSON actualizado
-file_put_contents($archivo, convertirAJSON($empleados));
+file_put_contents($archivo, convertirAJSON($empleados)); //escribir datos en un archivo
 
 // Redireccionar a reporte
 //eader("Location: procesar.php");

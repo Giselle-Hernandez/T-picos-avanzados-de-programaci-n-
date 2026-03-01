@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){ //Se ejecuta cuando el HTML del documento ha terminado de cargarse y procesarse
     const form = document.getElementById("reg_empleados");
     const mensaje_e = document.getElementById("ms_error");
 

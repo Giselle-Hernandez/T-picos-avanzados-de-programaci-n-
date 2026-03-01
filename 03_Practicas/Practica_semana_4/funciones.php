@@ -16,7 +16,7 @@ function validarEdad($edad){
 
 // Convierte arreglo a JSON con formato
 function convertirAJSON($datos){
-    return json_encode($datos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    return json_encode($datos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE); //para que los caracteres como ñ o ´ no sean codigo malicioso
 }
 
 // Convierte JSON a arreglo asociativo
