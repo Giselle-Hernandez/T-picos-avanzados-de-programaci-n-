@@ -1,4 +1,5 @@
 <!DOCTYPE html> <!--tipo de documento -->
+<!--Archivo del formulario-->
 <html lang="es"> <!--idioma del archivo -->
 <head> <!--encabezado -->
     <meta charset="UTF-8"> <!--linea para que acepte los caracteres especiales -->

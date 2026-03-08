@@ -1,4 +1,5 @@
 <?php //inicia php
+//en este archivo se realizan las consultas
 require_once "libreria/EmpleadoHelper.php"; // Carga obligatoriamente el archivo EmpleadoHelper.php una sola vez.
 require_once "config/Conexion.php"; //Carga obligatoriamente el archivo Conexion.php una sola vez.
 

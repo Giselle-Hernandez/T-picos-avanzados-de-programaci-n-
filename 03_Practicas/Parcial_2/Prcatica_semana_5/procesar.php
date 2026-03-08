@@ -1,4 +1,5 @@
 <?php
+//en este archivo se usa la libreria para hacer las validaciones y guardar en la base de datos
 require_once "libreria/EmpleadoHelper.php"; //Carga obligatoriamente el archivo EmpleadoHelper.php una sola vez.
 require_once "config/Conexion.php";//Carga obligatoriamente el archivo Configuracion.php una sola vez.
 
