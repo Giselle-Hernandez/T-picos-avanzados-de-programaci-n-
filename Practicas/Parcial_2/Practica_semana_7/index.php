@@ -1,67 +1,88 @@
 <?php
-include_once "conexion.php";
+require_once __DIR__ . "/conexion.php";
+$pdo = conexion::conectar();
 
-$logs = get_logs();
-if (!is_array($logs)) {
-    $logs = [];
-}
-
-$estadoTarea1 = "Detenido";
-$estadoTarea2 = "Detenido";
-
-foreach ($logs as $log) {
-    $tarea = $log['tarea'] ?? '';
-    $estado = $log['estado'] ?? '';
-    
-    if ($tarea === "Tarea 1") $estadoTarea1 = $estado;
-    if ($tarea === "Tarea 2") $estadoTarea2 = $estado;
-}
+$stmt = $pdo->prepare("SELECT * FROM registro ORDER BY fecha, hora ASC");
+$stmt->execute();
+$registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Control de Tareas</title>
-    <meta http-equiv="refresh" content="5"> 
+    <title>Control de tareas</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { margin: 0 auto; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #000; padding: 8px; text-align: center; }
+        h2,h3,h4,p,button { margin: 10px 0; }
+    </style>
+    <script>
+        // Evita bloqueos y permite concurrencia
+        async function iniciar_tarea(tarea) {
+            const estado = document.getElementById("estado" + tarea);
+            estado.innerText = "Estado: en ejecución";
+            
+            // Llamada a PHP para ejecutar la tarea paso a paso
+            let pasos = tarea === 1 ? ["iniciada", "en proceso", "finalizada"] : ["iniciada", "en proceso", "finalizada"];
+            let delays = tarea === 1 ? [2000, 2000] : [3000, 2000];
+
+            // Inserta el primer estado
+            await fetch(`tarea_proceso.php?tarea=${tarea}&estado=${pasos[0]}`);
+
+            for (let i = 1; i < pasos.length; i++) {
+                await new Promise(r => setTimeout(r, delays[i-1]));
+                await fetch(`tarea_proceso.php?tarea=${tarea}&estado=${pasos[i]}`);
+            }
+        }
+
+        function detener_tarea(tarea) {
+            document.getElementById("estado" + tarea).innerText = "Estado: detenida";
+            fetch(`detener.php?tarea=${tarea}`);
+        }
+
+        // Refresca tabla cada 3 segundos
+        setInterval(async () => {
+            const res = await fetch("tabla.php");
+            document.getElementById("tabla-registros").innerHTML = await res.text();
+        }, 3000);
+    </script>
 </head>
 <body>
-    <h1>CONTROL DE TAREAS DEL SISTEMA</h1>
 
-    <div class="tarea">
-        <h3>Tarea 1</h3>
-        <p>Estado actual: <strong><?= htmlspecialchars($estadoTarea1) ?></strong></p>
-        <a href="tareas.php?accion=iniciar&tarea=Tarea 1" class="boton btn-iniciar">Iniciar</a>
-        <a href="tareas.php?accion=detener&tarea=Tarea 1" class="boton btn-detener">Detener</a>
-    </div>
+<h2>CONTROL DE TAREAS DEL SISTEMA</h2>
 
-    <div class="tarea">
-        <h3>Tarea 2</h3>
-        <p>Estado actual: <strong><?= htmlspecialchars($estadoTarea2) ?></strong></p>
-        <a href="tareas.php?accion=iniciar&tarea=Tarea 2" class="boton btn-iniciar">Iniciar</a>
-        <a href="tareas.php?accion=detener&tarea=Tarea 2" class="boton btn-detener">Detener</a>
-    </div>
+<h4>Tarea 1 - Generar Reporte</h4>
+<p id="estado1">Estado: detenido</p>
+<button onclick="iniciar_tarea(1)">Iniciar</button>
+<button onclick="detener_tarea(1)">Detener</button>
 
-    <div class="log">
-        <h2>Registro de actividad</h2>
-        <ul>
-            <?php
-            if (!empty($logs)) {
-                $logsInvertidos = array_reverse($logs);
-                foreach ($logsInvertidos as $log) {
-                    $id = htmlspecialchars($log['Id'] ?? '');
-                    $fecha = htmlspecialchars($log['Fecha'] ?? '');
-                    $hora = htmlspecialchars($log['Hora'] ?? '');
-                    $tareaLog = htmlspecialchars($log['Tarea'] ?? '');
-                    $estadoLog = htmlspecialchars($log['Estado'] ?? '');
-                    
-                    echo "<li><strong> $id - $fecha - $hora</strong> - $tareaLog: <em> - $estadoLog</em></li>";
-                }
-            } else {
-                echo "<li>No hay registros aún.</li>";
-            }
-            ?>
-        </ul>
-    </div>
+<h4>Tarea 2 - Procesar lote</h4>
+<p id="estado2">Estado: detenido</p>
+<button onclick="iniciar_tarea(2)">Iniciar</button>
+<button onclick="detener_tarea(2)">Detener</button>
+
+<h3>Registro de actividad</h3>
+<div id="tabla-registros">
+<table>
+<tr>
+    <th>ID</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Tarea</th>
+    <th>Estado</th>
+</tr>
+<?php foreach ($registros as $row): ?>
+<tr>
+    <td><?php echo $row['Id']; ?></td>
+    <td><?php echo $row['Fecha']; ?></td>
+    <td><?php echo $row['Hora']; ?></td>
+    <td><?php echo $row['Tarea']; ?></td>
+    <td><?php echo $row['Estado']; ?></td>
+</tr>
+<?php endforeach; ?>
+</table>
+</div>
+
 </body>
 </html>
