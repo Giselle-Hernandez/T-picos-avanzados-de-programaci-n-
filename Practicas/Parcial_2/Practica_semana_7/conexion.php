@@ -1,4 +1,4 @@
-<?php
+<?php 
 class conexion {
     public static function conectar() {
         try {
