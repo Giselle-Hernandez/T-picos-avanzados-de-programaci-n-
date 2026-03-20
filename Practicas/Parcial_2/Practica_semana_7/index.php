@@ -18,35 +18,46 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
         h2,h3,h4,p,button { margin: 10px 0; }
     </style>
     <script>
-        // Evita bloqueos y permite concurrencia
-        async function iniciar_tarea(tarea) {
-            const estado = document.getElementById("estado" + tarea);
-            estado.innerText = "Estado: en ejecución";
-            
-            // Llamada a PHP para ejecutar la tarea paso a paso
-            let pasos = tarea === 1 ? ["iniciada", "en proceso", "finalizada"] : ["iniciada", "en proceso", "finalizada"];
-            let delays = tarea === 1 ? [2000, 2000] : [3000, 2000];
+    // Evita bloqueos y permite concurrencia
+    async function iniciar_tarea(tarea) {
+        const estado = document.getElementById("estado" + tarea);
+        estado.innerText = "Estado: en ejecución";
+        
+        let pasos = tarea === 1 ? ["iniciada", "en proceso", "finalizada"] : ["iniciada", "en proceso", "finalizada"];
+        let delays = tarea === 1 ? [2000, 2000] : [3000, 2000];
 
-            // Inserta el primer estado
-            await fetch(`tarea_proceso.php?tarea=${tarea}&estado=${pasos[0]}`);
+        // Inserta el primer estado
+        await fetch('tarea_proceso.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `tarea=${tarea}&estado=${pasos[0]}`
+        });
 
-            for (let i = 1; i < pasos.length; i++) {
-                await new Promise(r => setTimeout(r, delays[i-1]));
-                await fetch(`tarea_proceso.php?tarea=${tarea}&estado=${pasos[i]}`);
-            }
+        for (let i = 1; i < pasos.length; i++) {
+            await new Promise(r => setTimeout(r, delays[i-1]));
+            await fetch('tarea_proceso.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `tarea=${tarea}&estado=${pasos[i]}`
+            });
         }
+    }
 
-        function detener_tarea(tarea) {
-            document.getElementById("estado" + tarea).innerText = "Estado: detenida";
-            fetch(`detener.php?tarea=${tarea}`);
-        }
+    function detener_tarea(tarea) {
+        document.getElementById("estado" + tarea).innerText = "Estado: detenida";
+        fetch('detener.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `tarea=${tarea}`
+        });
+    }
 
-        // Refresca tabla cada 3 segundos
-        setInterval(async () => {
-            const res = await fetch("tabla.php");
-            document.getElementById("tabla-registros").innerHTML = await res.text();
-        }, 3000);
-    </script>
+    // Refresca tabla cada 3 segundos
+    setInterval(async () => {
+        const res = await fetch("tabla.php");
+        document.getElementById("tabla-registros").innerHTML = await res.text();
+    }, 3000);
+</script>
 </head>
 <body>
 
