@@ -27,7 +27,7 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC); // obtiene los registros y los g
 
                 await fetch('tarea_proceso.php', { /*en todo este bloque se envia el primer estado al sevidor  */
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, //es una cabecera que envia el formulario de forma tradicinal 
                     body: `tarea=${tarea}&estado=${pasos[0]}`
                 });
 

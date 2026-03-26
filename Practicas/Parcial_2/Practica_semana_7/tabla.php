@@ -16,7 +16,7 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC); //obtiene todos los $stmt y las 
     <th>Tarea</th>
     <th>Estado</th>
 </tr>
-<?php foreach ($registros as $row): ?> <!--para cada $row en el arreglo registros-->
+<?php foreach ($registros as $row): ?> <!--para cada $row en el arreglo registros--> <!--revisar bien esta linea porque el examen va a venir asi-->
 <tr>
     <td><?php echo $row['Id']; ?></td> <!--inserta los datos obtenidos td=celda e imprime el valor que hay en id-->
     <td><?php echo $row['Fecha']; ?></td>
