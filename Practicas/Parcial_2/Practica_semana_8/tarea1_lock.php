@@ -33,7 +33,7 @@ file_put_contents("log.txt", date("H:i:s") . " - Tarea 1 (LOCK REAL) escribe sal
 //file_put_contents("log.txt", date("H:i:s") . " - Tarea 1 (LOCK REAL) lee saldo: $saldo\n", FILE_APPEND); es para agregar al final del log los datos sin borra lo que ya hay en el log
 
 // liberar
-flock($fp, LOCK_UN);//Libera el bloqueo del aechivo 
+flock($fp, LOCK_UN);//Libera el bloqueo del archivo 
 //flock($fp, LOCK_UN); esta funcion desbloquea el archivo que se habia bloqueado al inicio del archivo ($fp)
 fclose($fp); //cierra correctamente el archivo $fp y libera el recurso de memoria que estaba ocupando 
 

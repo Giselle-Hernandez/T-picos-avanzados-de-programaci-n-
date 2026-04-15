@@ -1,0 +1,10 @@
+<?php
+require_once "conexion.php";
+$sql = "CREATE DATABASE IF NO EXISTS $db";
+
+if ($conexion->query($sql) === TRUE) {
+    echo "Base de datos creada o ya existente";
+} else {
+    echo "Error: " .$conexion->error;
+}
+?>
