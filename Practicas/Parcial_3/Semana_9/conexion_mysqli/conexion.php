@@ -6,6 +6,6 @@ if ($conexion ->connect_error){
     die("Error de cpnexion: . $conexion->connect_error");
 }
 
-echo "Conexion al servidor exitosa";
+echo "Conexion al servidor exitosa. ";
 #mysql es el gestor de base de datos
 ?>
