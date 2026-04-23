@@ -41,15 +41,15 @@ window.agregar =  async function () {
         return;
     }
    
-    await addDoc(collection(db, "produsctos"), {
+    await addDoc(collection(db, "productos"), {
         nombre,
         precio
     });
    
     alert("Producto agregado");
     
-    document.getElementById("nonbre").value = "";
-    document.getElenentById("precio").value = "";
+    document.getElementById("nombre").value = "";
+    document.getElementById("precio").value = "";
     
     leer();
 };
@@ -57,7 +57,7 @@ window.agregar =  async function () {
 async function leer() {
     datos = [];
 
-    const querysnapshot  = await gutDocs(colLection(db, "productos"));
+    const querysnapshot  = await getDocs(collection(db, "productos"));
 
     querysnapshot.forEach((docu)=> {
         datos.push({
@@ -79,7 +79,7 @@ function mostrar(lista) {
                 <td>${d.nombre}</td>
                 <td>${d.precio}</td>
                 <td>
-                    <button onclick="elininar('${d.id}')">Eliminar</button>
+                    <button onclick="eliminar('${d.id}')">Eliminar</button>
                     <button onclick="editar('${d.id}')">Editar</button>
                 </td>
             </tr>
@@ -110,7 +110,7 @@ window.filtrar = function (){
     const texto = document.getElementById("buscar").value.toLowerCase();
 
     const filtrados = datos.filter(d =>
-        d.nombre.toLowerCase().includes(tecto)
+        d.nombre.toLowerCase().includes(texto)
     );
 
     mostrar(filtrados);
