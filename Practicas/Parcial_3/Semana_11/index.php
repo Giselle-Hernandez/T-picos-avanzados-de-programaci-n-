@@ -42,7 +42,7 @@ $transacciones = [ //crea un arreglo de nombre transacciones
                         <small class="item-category"><?php echo $t['categoria']; ?></small> <!--en pequeño muestra la categoria a la que pertenece -->
                     </div><!--cierra el contenedor -->
                     <div class="item-amount" 
-                        style="color: <?php echo $t['monto'] < 0 ? '#ef4444' : '#10b981'; ?>;"> <!--color de los numeros-->
+                        style="color: <?php echo $t['monto']; ?>;"> <!--color de los numeros-->
                         <?php echo ($t['monto'] < 0 ? '-' : '+') . ' $' . abs($t['monto']); ?> <!--pone un signo antes dependiendo si es un gasto o un ingreso-->
                     </div>
                 </div>
