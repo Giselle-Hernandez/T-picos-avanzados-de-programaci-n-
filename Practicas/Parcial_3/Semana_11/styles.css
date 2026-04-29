@@ -1,0 +1,84 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+}
+
+/* Contenedor general */
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 15px;
+}
+
+/* Header */
+header {
+    background: #111827;
+    color: white;
+    padding: 20px 0;
+}
+
+.balance-label {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.balance-amount {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.fecha {
+    font-size: 0.8rem;
+}
+
+/* Tarjeta */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Lista de transacciones */
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-title {
+    font-weight: bold;
+}
+
+.item-category {
+    color: #6b7280;
+}
+
+.item-amount {
+    font-weight: bold;
+}
+
+/* Botón */
+.btn-action {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-action:hover {
+    background: #059669;
+}
