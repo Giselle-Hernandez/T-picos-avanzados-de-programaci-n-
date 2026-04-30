@@ -16,7 +16,7 @@ $transacciones = [ //crea un arreglo de nombre transacciones
 <head><!--abre el encabezado -->
     <meta charset="UTF-8"> <!--linea para que acepte los caracteres especiales -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--es la linea para que sea responsive -->     
-    <title>Mi Cartera App</title><!--es el titulo de la pestaña-->
+    <title>Mi Cartera</title><!--es el titulo de la pestaña-->
     <link rel="stylesheet" href="styles.css"><!--es el enlace con la hoja de estilos -->
 </head> <!--cierra el encabezado -->
 
@@ -42,7 +42,7 @@ $transacciones = [ //crea un arreglo de nombre transacciones
                         <small class="item-category"><?php echo $t['categoria']; ?></small> <!--en pequeño muestra la categoria a la que pertenece -->
                     </div><!--cierra el contenedor -->
                     <div class="item-amount" 
-                        style="color: <?php echo $t['monto']; ?>;"> <!--color de los numeros-->
+                        style="color: <?php echo ($t['monto'] < 0) ? '#ef4444' : '#10b981'; ?>;"> <!--color de los numeros-->
                         <?php echo ($t['monto'] < 0 ? '-' : '+') . ' $' . abs($t['monto']); ?> <!--pone un signo antes dependiendo si es un gasto o un ingreso-->
                     </div>
                 </div>
