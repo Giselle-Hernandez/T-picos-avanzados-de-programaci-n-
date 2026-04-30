@@ -1,5 +1,5 @@
 <?php //inicia codigo php
-$usuario = "Vanessa"; // crea la variable de usuario y le asigna el valor de "vanessa"
+$usuario = "Profe Collazo"; // crea la variable de usuario y le asigna el valor de "vanessa"
 $fecha_hoy = date("d / m / Y"); // en la variable de fecha guarda la fecha actual en un formato de dia mes y año
 $saldo_total = 1250.50; // vrea la variable de saldo_total y le asigna un valor 
 
