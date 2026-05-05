@@ -4,7 +4,7 @@ $fecha_hoy = date("d / m / Y"); // en la variable de fecha guarda la fecha actua
 $saldo_total = 1250.50; // vrea la variable de saldo_total y le asigna un valor 
 
 $transacciones = [ //crea un arreglo de nombre transacciones
-    ["item" => "Mensualidad Gym", "monto" => -450.00, "categoria" => "Salud"], //item es igal al nombre del gasto
+    ["item" => "Mensualidad Gym", "monto" => -100.00, "categoria" => "Salud"], //item es igal al nombre del gasto
     ["item" => "Pago de salario", "monto" => 1500.00, "categoria" => "Ingreso"], //el monto es la cantidad de dinero
     ["item" => "Comida fuera", "monto" => -320.50, "categoria" => "Comida"], //categoria es el tipo de gasto
     ["item" => "Transporte", "monto" => -12.00, "categoria" => "Viajes"] // la flecha de => signifoca clave apuntando al valor
