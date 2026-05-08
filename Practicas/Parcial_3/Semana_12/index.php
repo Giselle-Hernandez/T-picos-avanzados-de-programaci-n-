@@ -15,13 +15,13 @@ if (!isset($_SESSION['usuario'])){
         <meta name="theme-color" content="#2c3e50">
         <link rel="stylesheet" href="estilos.css">
     </head>
-    <body>
-        <header>
-            <div class="Logo">
-            <img src="snoppy.webp" alt="Logo de la app" class="Logo" loading="lazy">
-            </div>
-            <h2>Hola, <?php echo $_SESSION['usuario'];?></h2><br><br>
-        </header>
+    <body> <!--inicia el cuerpo -->
+        <header><!--abre el area superior de la pagina -->
+            <div class="Logo"><!-- crea una clase para dar formato al logo-->
+            <img src="snoppy.webp" alt="Logo de la app" class="Logo" loading="lazy"> <!--agrega la imagen y un texto por si la imagen no carga mas una indicacion para que solo cargue cuando el navegador este listo -->
+            </div><!--cierra el area de la clase que tendra ese formato -->
+            <h2>Hola, <?php echo $_SESSION['usuario'];?></h2><br><br><!--muestra mensajes en pantalla -->
+        </header><!--cierra la parte superior -->
 
         <main>
             <p>Administra tus tareas rapidamente</p>
