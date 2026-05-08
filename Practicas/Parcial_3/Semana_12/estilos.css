@@ -8,40 +8,40 @@ body {
 header {
     background: #2c3e50;
     color: white;
-    padding: 30px 15px;
+    padding: 30px 15px; /*espacio para que el contenido no toque los bordes */
     text-align: center;
 }
 
 main {
-    padding: 15px;
+    padding: 15px; /*margen para que los botones y las targetas no toquen las orillas*/
 }
 
 .btn {
-    display: block;
+    display: block; /*que el boton ocupe todo el espacio disponible*/
     background:#0ab936; /*cambio en el color de los botones*/
     color:white;
-    text-decoration: none;
+    text-decoration: none; /*quita el subrayado azul*/
     padding: 18px;
     margin-top: 15px;
     text-align: center;
-    border-radius: 8px;
-    font-weight: bold;
+    border-radius: 8px; /*redondea las esquinas*/
+    font-weight: bold; /*texto en negritas*/
 }
 
 .card {
-    background: white;
+    background: white; /*fondo*/
     padding: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /*separa una tarjeta de la otra*/
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /*Agrega una sombra sutil*/
 }
 
 .Logo {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    background: white;
+    width: 80px; /*tamaño de 80 pixeles*/
+    height: 80px; 
+    object-fit: cover; /*hace que la imagen sea cuadrada*/
+    border-radius: 50%; /*la imagen la hace circulo*/
+    background: white; /*marco blanco al rededor*/
     border: 3px solid white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }

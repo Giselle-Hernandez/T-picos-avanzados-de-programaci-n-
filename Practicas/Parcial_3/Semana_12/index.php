@@ -25,7 +25,7 @@ if (!isset($_SESSION['usuario'])){
 
         <main>
             <p>Administra tus tareas rapidamente</p>
-            <nav> 
+            <nav> <!--nav es un menu o bloque de navegacion-->
                 <a href="tareas.php" class="btn">Ver tareas</a>
             </nav>
         </main>
